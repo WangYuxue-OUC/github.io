@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>《电脑主板类型及尺寸》</title>
+    <link href="/github.io/2025/02/12/%E7%94%B5%E8%84%91%E4%B8%BB%E6%9D%BF%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%B0%BA%E5%AF%B8/"/>
+    <url>/github.io/2025/02/12/%E7%94%B5%E8%84%91%E4%B8%BB%E6%9D%BF%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%B0%BA%E5%AF%B8/</url>
+    
+    <content type="html"><![CDATA[<center>电脑主板类型及尺寸</center><p>1、早期主板</p><table><thead><tr><th align="center">版型</th><th align="center">尺寸</th><th align="center">时间</th></tr></thead><tbody><tr><td align="center">AT</td><td align="center">305mm*279-330mm</td><td align="center">1984年</td></tr><tr><td align="center">Baby-AT</td><td align="center">220mm*330mm</td><td align="center">1985年</td></tr><tr><td align="center">LPX</td><td align="center">9 英寸 x 13 英寸</td><td align="center">1987年</td></tr><tr><td align="center">NLX</td><td align="center"></td><td align="center">1997年</td></tr></tbody></table><p>2、超大板</p><table><thead><tr><th align="center">版型</th><th align="center">尺寸</th></tr></thead><tbody><tr><td align="center">WTX</td><td align="center">356mm*425mm</td></tr><tr><td align="center">HPTX</td><td align="center">354mm*381mm</td></tr><tr><td align="center">EE-ATX</td><td align="center">347mm*330mm</td></tr><tr><td align="center">E-ATX</td><td align="center">305mm*330mm</td></tr></tbody></table><p>3、大板 ATX</p><table><thead><tr><th align="center">版型</th><th align="center">尺寸</th><th align="center">时间</th></tr></thead><tbody><tr><td align="center">XL-ATX</td><td align="center">343mm*262mm</td><td align="center"></td></tr><tr><td align="center">ATX</td><td align="center">305mm*244mm</td><td align="center">1995年</td></tr><tr><td align="center">BTX</td><td align="center">325mm×266mm</td><td align="center">2005年</td></tr><tr><td align="center">Mini-ATX</td><td align="center">284mm*208mm</td><td align="center"></td></tr></tbody></table><p>4、小板 MATX</p><table><thead><tr><th align="center">版型</th><th align="center">尺寸</th><th align="center">时间</th></tr></thead><tbody><tr><td align="center">Micro-BTX</td><td align="center">264mm×267mm</td><td align="center">2005年</td></tr><tr><td align="center">Micro-ATX</td><td align="center">244mm*244mm</td><td align="center"></td></tr><tr><td align="center">uATX</td><td align="center">244mm*185mm</td><td align="center"></td></tr><tr><td align="center">FlexATX</td><td align="center">229mm*191mm</td><td align="center"></td></tr></tbody></table><p>5、迷你板 ITX</p><table><thead><tr><th align="center">版型</th><th align="center">尺寸</th><th align="center">时间</th></tr></thead><tbody><tr><td align="center">ITX</td><td align="center">170mm*170mm</td><td align="center"></td></tr><tr><td align="center">Nano-ITX</td><td align="center"></td><td align="center">2003年</td></tr><tr><td align="center">Pico-ITX</td><td align="center"></td><td align="center">2007年</td></tr><tr><td align="center">Thin-ITX</td><td align="center">170mm*170mm（缩减厚度）</td><td align="center"></td></tr><tr><td align="center">Mini-STX</td><td align="center">147mm x 140mm</td><td align="center">2015年</td></tr></tbody></table>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>主板</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>《Wi-Fi 标准和类型变迁》</title>
     <link href="/github.io/2025/02/11/Wi-Fi%20%E6%A0%87%E5%87%86%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%8F%98%E8%BF%81/"/>
     <url>/github.io/2025/02/11/Wi-Fi%20%E6%A0%87%E5%87%86%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%8F%98%E8%BF%81/</url>
@@ -15,25 +34,6 @@
     <tags>
       
       <tag>WIFI</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>《电脑主板类型及尺寸》</title>
-    <link href="/github.io/2025/02/10/%E7%94%B5%E8%84%91%E4%B8%BB%E6%9D%BF%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%B0%BA%E5%AF%B8/"/>
-    <url>/github.io/2025/02/10/%E7%94%B5%E8%84%91%E4%B8%BB%E6%9D%BF%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%B0%BA%E5%AF%B8/</url>
-    
-    <content type="html"><![CDATA[<center>电脑主板类型及尺寸</center><p>1、早期主板</p><table><thead><tr><th align="center">版型</th><th align="center">尺寸</th></tr></thead><tbody><tr><td align="center">AT</td><td align="center">305*279-330</td></tr><tr><td align="center">Baby-AT</td><td align="center">220*330</td></tr></tbody></table><p>2、超大板</p><table><thead><tr><th align="center">版型</th><th align="center">尺寸</th></tr></thead><tbody><tr><td align="center">WTX</td><td align="center">356*425</td></tr><tr><td align="center">HPTX</td><td align="center">354*381</td></tr><tr><td align="center">EE-ATX</td><td align="center">347*330</td></tr><tr><td align="center">E-ATX</td><td align="center">305*330</td></tr></tbody></table><p>3、大板</p><table><thead><tr><th align="center">版型</th><th align="center">尺寸</th></tr></thead><tbody><tr><td align="center">XL-ATX</td><td align="center">343*262</td></tr><tr><td align="center">ATX</td><td align="center">305*244</td></tr><tr><td align="center">Mini-ATX</td><td align="center">284*208</td></tr></tbody></table><p>4、小板</p><table><thead><tr><th align="center">版型</th><th align="center">尺寸</th></tr></thead><tbody><tr><td align="center">Micro-ATX</td><td align="center">244*244</td></tr><tr><td align="center">uATX</td><td align="center">244*185</td></tr><tr><td align="center">FlexATX</td><td align="center">229*191</td></tr></tbody></table><p>5、迷你板</p><table><thead><tr><th align="center">版型</th><th align="center">尺寸</th></tr></thead><tbody><tr><td align="center">ITX</td><td align="center">170*170</td></tr><tr><td align="center">Thin-ITX</td><td align="center"></td></tr></tbody></table>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>主板</tag>
       
     </tags>
     
