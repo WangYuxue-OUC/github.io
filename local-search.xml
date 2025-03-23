@@ -42,25 +42,6 @@
   
   
   <entry>
-    <title>RAM与ROM</title>
-    <link href="/github.io/2025/02/23/RAM%E4%B8%8EROM/"/>
-    <url>/github.io/2025/02/23/RAM%E4%B8%8EROM/</url>
-    
-    <content type="html"><![CDATA[<ul><li><h2 id="只读存储器ROM"><a href="#只读存储器ROM" class="headerlink" title="只读存储器ROM"></a>只读存储器ROM</h2><ol><li><p>PROM、EPROM、EEPROM</p></li><li><p>Flash（NOR与NAND）</p><p>SLC、MLC、TLC、QLC、PLC</p></li><li><p>eMMC、UFS</p><p>半工况eMMC&#x3D;Nand Flash+MMC接口协议控制器（采用标准封装）</p><p>全工况UFS</p></li><li><p>eMCP&#x2F;uMCP</p><p>eMCP&#x3D;eMMC+LPDDR</p><p>uMCP&#x3D;UFS+LPDDR</p></li></ol></li><li><h2 id="随机访问存储器RAM"><a href="#随机访问存储器RAM" class="headerlink" title="随机访问存储器RAM"></a>随机访问存储器RAM</h2><ol><li><p>FRAM</p><p>铁电随机存取</p></li><li><p>SRAM、DRAM、SDRAM</p><p>Static静态、Dynamic动态</p></li><li><p>DDR&#x2F;LPDDR</p><p>DDR动态同步</p><p>LP&#x3D;Low Power</p></li></ol></li></ul>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>ROM</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>喝酒的“专家”</title>
     <link href="/github.io/2025/02/22/%E5%96%9D%E9%85%92%E7%9A%84%E2%80%9C%E4%B8%93%E5%AE%B6%E2%80%9D/"/>
     <url>/github.io/2025/02/22/%E5%96%9D%E9%85%92%E7%9A%84%E2%80%9C%E4%B8%93%E5%AE%B6%E2%80%9D/</url>
