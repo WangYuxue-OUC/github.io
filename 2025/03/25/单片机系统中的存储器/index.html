@@ -16,15 +16,15 @@
   <meta name="author" content="Wang _Fitz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="只读存储器ROMROM的全称是只读存储器，其特性是一旦存储数据就无法再将之改变或删除，通常用在不需经常变更数据的电子或电脑系统中，并且资料不会因为电源关闭而消失。 1、在计算机发展的初期，ROM（只读存储器）的功能较为单一，主要用于存储程序。作为电脑启动时运行的首个软件，早期BIOS（基本输入输出系统）仅具备基础功能，只需完成简单的硬件初始化和引导任务，无需频繁更新。因此，那时的ROM被设计成只能">
+    <meta name="description" content="只读存储器ROMROM的全称是只读存储器，其特性是一旦存储数据就无法再将之改变或删除，通常用在不需经常变更数据的电子或电脑系统中，并且资料不会因为电源关闭而消失。 1、ROM（只读存储器）在计算机发展的初期，ROM（只读存储器）的功能较为单一，主要用于存储程序。作为电脑启动时运行的首个软件，早期BIOS（基本输入输出系统）仅具备基础功能，只需完成简单的硬件初始化和引导任务，无需频繁更新。因此，那时">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单片机系统中的存储器">
 <meta property="og:url" content="https://wangyuxue-ouc.github.io/github.io/2025/03/25/%E5%8D%95%E7%89%87%E6%9C%BA%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8%E5%99%A8/index.html">
 <meta property="og:site_name" content="耕海纪">
-<meta property="og:description" content="只读存储器ROMROM的全称是只读存储器，其特性是一旦存储数据就无法再将之改变或删除，通常用在不需经常变更数据的电子或电脑系统中，并且资料不会因为电源关闭而消失。 1、在计算机发展的初期，ROM（只读存储器）的功能较为单一，主要用于存储程序。作为电脑启动时运行的首个软件，早期BIOS（基本输入输出系统）仅具备基础功能，只需完成简单的硬件初始化和引导任务，无需频繁更新。因此，那时的ROM被设计成只能">
+<meta property="og:description" content="只读存储器ROMROM的全称是只读存储器，其特性是一旦存储数据就无法再将之改变或删除，通常用在不需经常变更数据的电子或电脑系统中，并且资料不会因为电源关闭而消失。 1、ROM（只读存储器）在计算机发展的初期，ROM（只读存储器）的功能较为单一，主要用于存储程序。作为电脑启动时运行的首个软件，早期BIOS（基本输入输出系统）仅具备基础功能，只需完成简单的硬件初始化和引导任务，无需频繁更新。因此，那时">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-25T11:37:27.000Z">
-<meta property="article:modified_time" content="2025-03-25T15:22:03.884Z">
+<meta property="article:modified_time" content="2025-03-26T14:57:33.778Z">
 <meta property="article:author" content="Wang _Fitz">
 <meta property="article:tag" content="ROM">
 <meta name="twitter:card" content="summary_large_image">
@@ -302,19 +302,18 @@
               <div class="markdown-body">
                 
                 <h2 id="只读存储器ROM"><a href="#只读存储器ROM" class="headerlink" title="只读存储器ROM"></a>只读存储器ROM</h2><p>ROM的全称是只读存储器，其特性是一旦存储数据就无法再将之改变或删除，通常用在不需经常变更数据的电子或电脑系统中，并且资料不会因为电源关闭而消失。</p>
-<p>1、在计算机发展的初期，<strong>ROM（只读存储器）</strong>的功能较为单一，主要用于存储程序。作为电脑启动时运行的首个软件，早期BIOS（基本输入输出系统）仅具备基础功能，只需完成简单的硬件初始化和引导任务，无需频繁更新。因此，那时的ROM被设计成只能读取，无法写入，以此保障BIOS程序的稳定性和安全性。</p>
-<p>2、后来有了<strong>PROM，即可编程只读存储器</strong>，对PROM写入程序后数据便无法更改。它利用的是熔丝技术，存储的每一位数据都是由熔丝状态决定的。比如当熔丝熔断之后，它代表0，没有熔断代表1。编程过程就是通过特定的编程设备，利用高电压或其他手段来改变存储单元的状态，从而实现数据的写入。一旦某个存储单元的状态被改变，就无法再恢复到原来的状态，这就实现了一次性编程的功能。</p>
-<p>3、继PROM之后，又出现了<strong>EPROM，即可抹除可编程只读存储器</strong>，它可以利用高压写入数据，擦除数据的时候需要将芯片曝光于紫外光下一段时间，所以这种ROM上方都有一块玻璃开窗。EPROM的存储单元基于浮栅晶体管结构，浮栅上的电荷决定了存储单元的逻辑状态，有电荷表示一种状态（如逻辑0），无电荷表示另一种状态（如逻辑1）。编程时，通过在控制栅极施加高电压，使电子隧穿到浮栅上，从而改变存储单元的状态来写入数据。擦除时，利用紫外线照射EPROM芯片，使浮栅中的电子获得足够能量，通过隧道效应返回衬底，从而将所有存储单元恢复到初始的全1状态。</p>
-<p>4、后来出现了<strong>EEPROM，它是电可擦除可编程只读存储器</strong>，它的擦除方式使用高压电场，所以在EEPROM芯片内部都设置有电荷泵电路来产生高压。对于一些比较简单的电子产品，它的微控制器里面就内置了EEPROM，我们保存的用户设置信息就存储在微控制器的EEPROM里面。</p>
-<p>5、后来<strong>flash出现了，也就是闪存</strong>，无论是nor flash还是nand flash其实都是属于EEPROM的，因为他们本质上是通过电来擦出和写入的。</p>
+<h4 id="1、ROM（只读存储器）"><a href="#1、ROM（只读存储器）" class="headerlink" title="1、ROM（只读存储器）"></a>1、ROM（只读存储器）</h4><p>在计算机发展的初期，ROM（只读存储器）的功能较为单一，主要用于存储程序。作为电脑启动时运行的首个软件，早期BIOS（基本输入输出系统）仅具备基础功能，只需完成简单的硬件初始化和引导任务，无需频繁更新。因此，那时的ROM被设计成只能读取，无法写入，以此保障BIOS程序的稳定性和安全性。</p>
+<h4 id="2、PROM（可编程只读存储器"><a href="#2、PROM（可编程只读存储器" class="headerlink" title="2、PROM（可编程只读存储器)"></a>2、PROM（可编程只读存储器)</h4><p>后来有了PROM，即可编程只读存储器，对PROM写入程序后数据便无法更改。它利用的是熔丝技术，存储的每一位数据都是由熔丝状态决定的。比如当熔丝熔断之后，它代表0，没有熔断代表1。编程过程就是通过特定的编程设备，利用高电压或其他手段来改变存储单元的状态，从而实现数据的写入。一旦某个存储单元的状态被改变，就无法再恢复到原来的状态，这就实现了一次性编程的功能。</p>
+<h4 id="3、EPROM-抹除可编程只读存储器"><a href="#3、EPROM-抹除可编程只读存储器" class="headerlink" title="3、EPROM(抹除可编程只读存储器)"></a>3、EPROM(抹除可编程只读存储器)</h4><p>继PROM之后，又出现了EPROM，即可抹除可编程只读存储器，它可以利用高压写入数据，擦除数据的时候需要将芯片曝光于紫外光下一段时间，所以这种ROM上方都有一块玻璃开窗。EPROM的存储单元基于浮栅晶体管结构，浮栅上的电荷决定了存储单元的逻辑状态，有电荷表示一种状态（如逻辑0），无电荷表示另一种状态（如逻辑1）。编程时，通过在控制栅极施加高电压，使电子隧穿到浮栅上，从而改变存储单元的状态来写入数据。擦除时，利用紫外线照射EPROM芯片，使浮栅中的电子获得足够能量，通过隧道效应返回衬底，从而将所有存储单元恢复到初始的全1状态。</p>
+<h4 id="4、EEPROM-电可擦除可编程只读存储器"><a href="#4、EEPROM-电可擦除可编程只读存储器" class="headerlink" title="4、EEPROM(电可擦除可编程只读存储器)"></a>4、EEPROM(电可擦除可编程只读存储器)</h4><p>后来出现了EEPROM，它是电可擦除可编程只读存储器，它的擦除方式使用高压电场，所以在EEPROM芯片内部都设置有电荷泵电路来产生高压。对于一些比较简单的电子产品，它的微控制器里面就内置了EEPROM，我们保存的用户设置信息就存储在微控制器的EEPROM里面。</p>
+<h4 id="5、flash-闪存"><a href="#5、flash-闪存" class="headerlink" title="5、flash(闪存)"></a>5、flash(闪存)</h4><p>后来flash出现了，也就是闪存，无论是nor flash还是nand flash其实都是属于EEPROM的，因为他们本质上是通过电来擦出和写入的。</p>
 <ul>
 <li><p>NAND FLASH工作原理：采用了一种串行的读写方式，即以块为单位进行擦除操作，以页为单位进行编程写入。数据读取时按页进行，适合大量数据的连续读写。应用场景：广泛应用于固态硬盘（SSD）、U盘、存储卡等大容量存储设备，也用于智能手机、平板电脑等移动设备的内部存储。其中固态硬盘（SSD）存储容量可以达到数TB，更适用于需要大容量、高速存储的场景，根据闪存芯片每个cell中所能存储的数据量，分为SLC (Single-Level Cell，每个cell存储1bit数据)、  MLC (Multi-Level Cell，每个cell存储2bit数据)、TLC (Trinary-Level Cell，每个cell存储3bit数据)、QLC (Quad-Level Cell，每个cell存储4bit数据)、PLC。</p>
 </li>
 <li><p>NOR FLASH工作原理：采用了一种并行的读写方式，即数据的读取、写入和擦除操作都可以按字节或字进行，能快速随机访问任意地址的数据，擦除通常以块为单位，但块的大小相对NAND Flash较小。应用场景：常用于需要快速启动和随机访问代码的设备，如计算机的BIOS、汽车电子中的发动机控制单元（ECU）等，也用于一些对代码执行速度要求高的嵌入式系统。</p>
 </li>
 </ul>
-<p>6、<strong>eMMC和UFS</strong></p>
-<ul>
+<h4 id="6、eMMC和UFS"><a href="#6、eMMC和UFS" class="headerlink" title="6、eMMC和UFS"></a>6、eMMC和UFS</h4><ul>
 <li><p>半工况eMMC ( Embedded Multi Media Card)</p>
 <p>eMMC是一种集成控制器和存储芯片的存储设备，采用了NAND Flash技术,简单地说，eMMC&#x3D;Nand Flash+控制器+标准封装。与NAND Flash不同的是，eMMC通常具有较小的存储容量，通常在几十GB或几百GB的级别。eMMC可以作为内置存储器使用，并且由于其内置控制器的作用，可以实现快速的读写操作。因此，eMMC适合于移动设备、嵌入式系统和一些消费电子产品等领域的应用。</p>
 </li>
@@ -322,8 +321,7 @@
 <p>UFS是EMMC的升级版，同样是由多个闪存芯片、主控组成的阵列式存储模块。UFS 弥补了 eMMC 仅支持半双工运行（读写必须分开执行）的缺陷，可以实现全双工运行，所以性能得到翻番,主要用于高端智能手机、平板电脑等移动设备上。</p>
 </li>
 </ul>
-<p>7、<strong>eMCP和uMCP</strong></p>
-<ul>
+<h4 id="7、eMCP和uMCP"><a href="#7、eMCP和uMCP" class="headerlink" title="7、eMCP和uMCP"></a>7、eMCP和uMCP</h4><ul>
 <li><p>eMCP&#x3D;eMMC+LPDDR</p>
 <p>eMCP 是结合 eMMC 和 LPDDR 封装而成的智慧型手机记忆体标准，与传统的 MCP 相较之下，eMCP 因为有内建的 NAND Flash 控制芯片，可以减少主芯片运算的负担，并且管理更大容量的快闪记忆体。</p>
 </li>
@@ -333,10 +331,10 @@
 </ul>
 <hr>
 <h2 id="随机访问存储器RAM"><a href="#随机访问存储器RAM" class="headerlink" title="随机访问存储器RAM"></a>随机访问存储器RAM</h2><p>RAM是随机存取存储器，在断电之后它所存储的数据就会消失，但是在速度上要远远大于ROM，即使是固态硬盘也不能跟RAM比肩。</p>
-<p>1、<strong>SRAM</strong>是静态RAM，CPU的L1、L2缓存说的就是SRAM，它的信息存储靠的是门电路，这些不需要电容，所以速度上更快，但是由于它存储一位信息需要的晶体管比较多，所以不能大容量集成，而DRAM一个晶体管就能存储一位信息，所以可以大容量集成。</p>
+<h4 id="1、SRAM"><a href="#1、SRAM" class="headerlink" title="1、SRAM"></a>1、SRAM</h4><p><strong>SRAM</strong>是静态RAM，CPU的L1、L2缓存说的就是SRAM，它的信息存储靠的是门电路，这些不需要电容，所以速度上更快，但是由于它存储一位信息需要的晶体管比较多，所以不能大容量集成，而DRAM一个晶体管就能存储一位信息，所以可以大容量集成。</p>
 <p>说到存储器的速度，其实最快的是CPU中的寄存器，寄存器其实也属于存储器，它的速度几乎和CPU是一样的。</p>
-<p>2、<strong>DRAM</strong>是动态RAM，就是我们电脑上的内存条，它是靠电容存储信息的，所以需要动态刷新，以此来给电容不停的充电，所以在速度上DRAM就不如SRAM。</p>
-<p>3、<strong>DDR</strong>（Double Data Rate）和<strong>LPDDR</strong>（Low Power Double Data Rate）是最常见的内存类型之一，属于易失性存储器，都采用了双倍数据传输率和同步时钟技术，以提高数据传输速度。LPDDR内存的功耗较低，适合移动设备和嵌入式系统等需要长时间使用的场景。DDR内存则适用于计算机、服务器和其他高性能计算设备等领域，如存储和处理图形、声音和视频等数据。DDR内存技术已经经历了几代发展，包括DDR、DDR2、DDR3、DDR4和DDR5等，每一代的数据传输速率都有所提高。</p>
+<h4 id="2、DRAM"><a href="#2、DRAM" class="headerlink" title="2、DRAM"></a>2、DRAM</h4><p><strong>DRAM</strong>是动态RAM，就是我们电脑上的内存条，它是靠电容存储信息的，所以需要动态刷新，以此来给电容不停的充电，所以在速度上DRAM就不如SRAM。</p>
+<h4 id="3、DDR"><a href="#3、DDR" class="headerlink" title="3、DDR"></a>3、DDR</h4><p><strong>DDR</strong>（Double Data Rate）和<strong>LPDDR</strong>（Low Power Double Data Rate）是最常见的内存类型之一，属于易失性存储器，都采用了双倍数据传输率和同步时钟技术，以提高数据传输速度。LPDDR内存的功耗较低，适合移动设备和嵌入式系统等需要长时间使用的场景。DDR内存则适用于计算机、服务器和其他高性能计算设备等领域，如存储和处理图形、声音和视频等数据。DDR内存技术已经经历了几代发展，包括DDR、DDR2、DDR3、DDR4和DDR5等，每一代的数据传输速率都有所提高。</p>
 
                 
               </div>
@@ -410,8 +408,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/github.io/2025/03/23/%E8%8A%AF%E7%89%87%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3/" title="芯片详细讲解">
-                        <span class="hidden-mobile">芯片详细讲解</span>
+                      <a href="/github.io/2025/03/23/%E5%A4%84%E7%90%86%E5%99%A8%E8%8A%AF%E7%89%87%E8%AF%A6%E8%A7%A3/" title="处理器芯片详解">
+                        <span class="hidden-mobile">处理器芯片详解</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
