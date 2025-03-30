@@ -24,7 +24,7 @@
 <meta property="og:description" content="RAID 是一种用于提高数据存储性能和可靠性的技术，英文全称：Redundant Array of Independent Disks，中文意思：独立磁盘冗余阵列。RAID 系统由两个或多个并行工作的驱动器组成，这些可以是机械硬盘或者固态硬盘。RAID 可分为软件 RAID 和硬件 RAID，在软件 RAID 中，内存架构由操作系统管理，在硬件 RAID 的情况下，磁盘内有一个专用控制器和处理器来">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-31T14:35:27.000Z">
-<meta property="article:modified_time" content="2025-03-30T14:06:32.826Z">
+<meta property="article:modified_time" content="2025-03-30T14:48:25.296Z">
 <meta property="article:author" content="Wang _Fitz">
 <meta property="article:tag" content="RAID">
 <meta name="twitter:card" content="summary_large_image">
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          721 字
+          715 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          7 分钟
+          6 分钟
         
       </span>
     
@@ -302,97 +302,97 @@
               <div class="markdown-body">
                 
                 <p>RAID 是一种用于提高数据存储性能和可靠性的技术，英文全称：<code>Redundant Array of Independent Disks</code>，中文意思：独立磁盘冗余阵列。RAID 系统由两个或多个并行工作的驱动器组成，这些可以是机械硬盘或者固态硬盘。RAID 可分为软件 RAID 和硬件 RAID，在软件 RAID 中，内存架构由操作系统管理，在硬件 RAID 的情况下，磁盘内有一个专用控制器和处理器来管理内存。</p>
-<h2 id="基本-RAID-级别（0、1、5-和-6）"><a href="#基本-RAID-级别（0、1、5-和-6）" class="headerlink" title="基本 RAID 级别（0、1、5 和 6）"></a>基本 RAID 级别（0、1、5 和 6）</h2><h4 id="RAID-0"><a href="#RAID-0" class="headerlink" title="RAID 0"></a><strong>RAID 0</strong></h4><p>读写速度≈单盘速度×N（N为硬盘数），但在数据安全方面，任意一盘故障，数据全毁，仅适合临时渲染缓存素材，不适合永久存储重要资料。</p>
+<h2 id="1-基本-RAID-级别"><a href="#1-基本-RAID-级别" class="headerlink" title="1. 基本 RAID 级别"></a>1. 基本 RAID 级别</h2><h4 id="RAID-0"><a href="#RAID-0" class="headerlink" title="RAID 0"></a><strong>RAID 0</strong></h4><p>读写速度≈单盘速度×N（N为硬盘数），但在数据安全方面，任意一盘故障，数据全毁，仅适合临时渲染缓存素材，不适合永久存储重要资料。</p>
 <h4 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a><strong>RAID 1</strong></h4><p>支持单盘故障无损恢复，重建速度最快，但代价就是总硬盘容量利用率仅50%左右，两盘当一盘使用来确保数据安全。</p>
 <h4 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a><strong>RAID 5</strong></h4><p>允许单盘故障，容量利用率≈(N-1)&#x2F;N，数据有冗余保障但恢复难度不低，需专用校验算法。</p>
 <h4 id="RAID-6"><a href="#RAID-6" class="headerlink" title="RAID 6"></a><strong>RAID 6</strong></h4><p>RAID 6 使用双奇偶校验块来实现比 RAID 5 更好的数据冗余，这增加了阵列中最多两个驱动器故障的容错能力。每个磁盘都有两个奇偶校验块，它们存储在阵列中的不同磁盘上。</p>
 <hr>
-<h2 id="跨区-RAID-级别（10、50-和-60）"><a href="#跨区-RAID-级别（10、50-和-60）" class="headerlink" title="跨区 RAID 级别（10、50 和 60）"></a>跨区 RAID 级别（10、50 和 60）</h2><h4 id="RAID-10"><a href="#RAID-10" class="headerlink" title="RAID 10"></a><strong>RAID 10</strong></h4><p>相当于RAID 1+RAID 0嵌套，允许半数硬盘同时故障 <strong>，</strong>适合内容创作&#x2F;金融&#x2F;医疗等重要行业核心数据存储，不过成本高昂。需至少4盘组成。</p>
+<h2 id="2-跨区-RAID-级别"><a href="#2-跨区-RAID-级别" class="headerlink" title="2. 跨区 RAID 级别"></a>2. 跨区 RAID 级别</h2><h4 id="RAID-10"><a href="#RAID-10" class="headerlink" title="RAID 10"></a><strong>RAID 10</strong></h4><p>相当于RAID 1+RAID 0嵌套，允许半数硬盘同时故障 <strong>，</strong>适合内容创作&#x2F;金融&#x2F;医疗等重要行业核心数据存储，不过成本高昂。需至少4盘组成。</p>
 <h4 id="RAID-50"><a href="#RAID-50" class="headerlink" title="RAID 50"></a><strong>RAID 50</strong></h4><p>RAID 50 由两个或多个RAID 5阵列组成，形成类似RAID 0的条带化阵列。与配置相同数量的RAID 5相比，它提供了更高的访问性能和更强的数据保护性能。</p>
 <h4 id="RAID-60"><a href="#RAID-60" class="headerlink" title="RAID 60"></a>RAID 60</h4><p>RAID 60有时称为 RAID 6+RAID 0，即将多个 RAID 6 集（带双奇偶校验的条带化）与 RAID 0（条带化）结合在一起。双奇偶校验允许每个 RAID 6 阵列中的两个驱动器发生故障，而条带化可提高容量和性能，而无需向每个 RAID 6 阵列添加驱动器。</p>
 <hr>
-<h2 id="RAID级别比较"><a href="#RAID级别比较" class="headerlink" title="RAID级别比较"></a><strong>RAID级别比较</strong></h2><table>
+<h2 id="3-RAID级别比较"><a href="#3-RAID级别比较" class="headerlink" title="3. RAID级别比较"></a>3. RAID级别比较</h2><table>
 <thead>
 <tr>
-<th align="left">特征</th>
-<th align="left">RAID 0</th>
-<th align="left">RAID 1</th>
-<th align="left">RAID 5</th>
-<th align="left">RAID 6</th>
-<th align="left">RAID 10</th>
-<th align="left">RAID 50</th>
-<th align="left">RAID 60</th>
+<th align="center">特征</th>
+<th align="center">RAID 0</th>
+<th align="center">RAID 1</th>
+<th align="center">RAID 5</th>
+<th align="center">RAID 6</th>
+<th align="center">RAID 10</th>
+<th align="center">RAID 50</th>
+<th align="center">RAID 60</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">最小驱动器</td>
-<td align="left">1个</td>
-<td align="left">2个</td>
-<td align="left">3个</td>
-<td align="left">4个</td>
-<td align="left">4个</td>
-<td align="left">6个</td>
-<td align="left">8个</td>
+<td align="center">最小驱动器</td>
+<td align="center">1个</td>
+<td align="center">2个</td>
+<td align="center">3个</td>
+<td align="center">4个</td>
+<td align="center">4个</td>
+<td align="center">6个</td>
+<td align="center">8个</td>
 </tr>
 <tr>
-<td align="left">最大驱动器</td>
-<td align="left">32</td>
-<td align="left">2个</td>
-<td align="left">32</td>
-<td align="left">32</td>
-<td align="left">16</td>
-<td align="left">192</td>
-<td align="left">192</td>
+<td align="center">最大驱动器</td>
+<td align="center">32</td>
+<td align="center">2个</td>
+<td align="center">32</td>
+<td align="center">32</td>
+<td align="center">16</td>
+<td align="center">192</td>
+<td align="center">192</td>
 </tr>
 <tr>
-<td align="left">对硬盘故障的容忍度</td>
-<td align="left">没有任何</td>
-<td align="left">1 个驱动器</td>
-<td align="left">1 个驱动器</td>
-<td align="left">2个驱动器</td>
-<td align="left">每个跨度 1 个驱动器</td>
-<td align="left">每个跨度 1 个驱动器</td>
-<td align="left">每个跨度 2 个驱动器</td>
+<td align="center">对硬盘故障的容忍度</td>
+<td align="center">没有任何</td>
+<td align="center">1 个驱动器</td>
+<td align="center">1 个驱动器</td>
+<td align="center">2个驱动器</td>
+<td align="center">每个跨度 1 个驱动器</td>
+<td align="center">每个跨度 1 个驱动器</td>
+<td align="center">每个跨度 2 个驱动器</td>
 </tr>
 <tr>
-<td align="left">重建时间</td>
-<td align="left">没有任何</td>
-<td align="left">快速地</td>
-<td align="left">减缓</td>
-<td align="left">缓慢</td>
-<td align="left">快速地</td>
-<td align="left">缓慢</td>
-<td align="left">缓慢</td>
+<td align="center">重建时间</td>
+<td align="center">没有任何</td>
+<td align="center">快速地</td>
+<td align="center">减缓</td>
+<td align="center">缓慢</td>
+<td align="center">快速地</td>
+<td align="center">缓慢</td>
+<td align="center">缓慢</td>
 </tr>
 <tr>
-<td align="left">读写性能</td>
-<td align="left">出色的</td>
-<td align="left">非常好</td>
-<td align="left">出色的</td>
-<td align="left">出色的</td>
-<td align="left">非常好</td>
-<td align="left">出色的</td>
-<td align="left">出色的</td>
+<td align="center">读写性能</td>
+<td align="center">出色的</td>
+<td align="center">非常好</td>
+<td align="center">出色的</td>
+<td align="center">出色的</td>
+<td align="center">非常好</td>
+<td align="center">出色的</td>
+<td align="center">出色的</td>
 </tr>
 <tr>
-<td align="left">阵列性能下降</td>
-<td align="left">没有任何</td>
-<td align="left">非常好</td>
-<td align="left">满意的</td>
-<td align="left">满意的</td>
-<td align="left">非常好</td>
-<td align="left">好的</td>
-<td align="left">好的</td>
+<td align="center">阵列性能下降</td>
+<td align="center">没有任何</td>
+<td align="center">非常好</td>
+<td align="center">满意的</td>
+<td align="center">满意的</td>
+<td align="center">非常好</td>
+<td align="center">好的</td>
+<td align="center">好的</td>
 </tr>
 <tr>
-<td align="left">容量开销</td>
-<td align="left">没有任何</td>
-<td align="left">一半</td>
-<td align="left">1 个驱动器</td>
-<td align="left">2个驱动器</td>
-<td align="left">一半</td>
-<td align="left">每个跨度 1 个驱动器</td>
-<td align="left">每个跨度 2 个驱动器</td>
+<td align="center">容量开销</td>
+<td align="center">没有任何</td>
+<td align="center">一半</td>
+<td align="center">1 个驱动器</td>
+<td align="center">2个驱动器</td>
+<td align="center">一半</td>
+<td align="center">每个跨度 1 个驱动器</td>
+<td align="center">每个跨度 2 个驱动器</td>
 </tr>
 </tbody></table>
 
