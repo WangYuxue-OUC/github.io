@@ -16,22 +16,22 @@
   <meta name="author" content="Wang _Fitz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1、物理接口：数据的“高速公路” SATA接口 物理形态：7针L型连接器（2.5英寸设备）协议绑定：仅支持SATA协议（AHCI指令集） 带宽瓶颈：SATA 3.0理论6Gbps，机械臂寻址延迟高  PCIe接口物理形态：PCIe插槽（x1&#x2F;x4&#x2F;x8通道）协议自由：纯通道资源，可承载NVMe、AHCI、RAID等协议带宽计算：PCIe 3.0 x4 ≈ 4GB&#x2F;s，">
+    <meta name="description" content="1. ARM处理器产品线ARM处理器现在产品线主要有Cortex-A、Cortex-R、Cortex-M、SecureCore、Neoverse等     定位 ARMv4 ARMv5 ARMv6 ARMv7 ARMv8      7TDM 920T 968ES 946ES 926EJS      Cortex-A 应用处理器   1136&#x2F;1176 A5&#x2F;A8&#x2F;A1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="存储系统的接口和协议">
-<meta property="og:url" content="https://wangyuxue-ouc.github.io/github.io/2025/02/12/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%8E%A5%E5%8F%A3%E5%92%8C%E5%8D%8F%E8%AE%AE/index.html">
+<meta property="og:title" content="ARM处理器脉络">
+<meta property="og:url" content="https://wangyuxue-ouc.github.io/github.io/2025/02/23/ARM%E5%A4%84%E7%90%86%E5%99%A8%E8%84%89%E7%BB%9C/index.html">
 <meta property="og:site_name" content="耕海纪">
-<meta property="og:description" content="1、物理接口：数据的“高速公路” SATA接口 物理形态：7针L型连接器（2.5英寸设备）协议绑定：仅支持SATA协议（AHCI指令集） 带宽瓶颈：SATA 3.0理论6Gbps，机械臂寻址延迟高  PCIe接口物理形态：PCIe插槽（x1&#x2F;x4&#x2F;x8通道）协议自由：纯通道资源，可承载NVMe、AHCI、RAID等协议带宽计算：PCIe 3.0 x4 ≈ 4GB&#x2F;s，">
+<meta property="og:description" content="1. ARM处理器产品线ARM处理器现在产品线主要有Cortex-A、Cortex-R、Cortex-M、SecureCore、Neoverse等     定位 ARMv4 ARMv5 ARMv6 ARMv7 ARMv8      7TDM 920T 968ES 946ES 926EJS      Cortex-A 应用处理器   1136&#x2F;1176 A5&#x2F;A8&#x2F;A1">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-12T14:35:27.000Z">
-<meta property="article:modified_time" content="2025-04-23T15:13:59.030Z">
+<meta property="article:published_time" content="2025-02-23T14:35:27.000Z">
+<meta property="article:modified_time" content="2025-04-23T15:31:52.650Z">
 <meta property="article:author" content="Wang _Fitz">
-<meta property="article:tag" content="存储">
+<meta property="article:tag" content="处理器芯片">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>存储系统的接口和协议 - 耕海纪</title>
+  <title>ARM处理器脉络 - 耕海纪</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="存储系统的接口和协议"></span>
+            <span id="subtitle" data-typed-text="ARM处理器脉络"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-12 22:35" pubdate>
-          2025年2月12日 晚上
+        <time datetime="2025-02-23 22:35" pubdate>
+          2025年2月23日 晚上
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          614 字
+          396 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          6 分钟
+          4 分钟
         
       </span>
     
@@ -296,32 +296,252 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">存储系统的接口和协议</h1>
+            <h1 id="seo-header">ARM处理器脉络</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="1、物理接口：数据的“高速公路”"><a href="#1、物理接口：数据的“高速公路”" class="headerlink" title="1、物理接口：数据的“高速公路”"></a>1、物理接口：数据的“高速公路”</h2><ol>
-<li><h4 id="SATA接口"><a href="#SATA接口" class="headerlink" title="SATA接口"></a>SATA接口</h4><p> 物理形态：7针L型连接器（2.5英寸设备）<br>协议绑定：仅支持SATA协议（AHCI指令集）<br> 带宽瓶颈：SATA 3.0理论6Gbps，机械臂寻址延迟高</p>
-</li>
-<li><h4 id="PCIe接口"><a href="#PCIe接口" class="headerlink" title="PCIe接口"></a>PCIe接口</h4><p>物理形态：PCIe插槽（x1&#x2F;x4&#x2F;x8通道）<br>协议自由：纯通道资源，可承载NVMe、AHCI、RAID等协议<br>带宽计算：PCIe 3.0 x4 ≈ 4GB&#x2F;s，PCIe 4.0 x4 ≈ 8GB&#x2F;s</p>
-</li>
-<li><h4 id="M-2接口"><a href="#M-2接口" class="headerlink" title="M.2接口"></a>M.2接口</h4><p>物理形态：M.2 Key设计（B Key&#x2F;M Key）<br>B Key（Socket 2）：支持SATA&#x2F;PCIe x2<br>M Key（Socket 3）：支持PCIe x4（NVMe）<br>核心特点：通过接口形态区分协议类型（见下图）</p>
-</li>
+                <h2 id="1-ARM处理器产品线"><a href="#1-ARM处理器产品线" class="headerlink" title="1. ARM处理器产品线"></a>1. ARM处理器产品线</h2><p>ARM处理器现在产品线主要有Cortex-A、Cortex-R、Cortex-M、SecureCore、Neoverse等</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">定位</th>
+<th>ARMv4</th>
+<th>ARMv5</th>
+<th>ARMv6</th>
+<th>ARMv7</th>
+<th>ARMv8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td align="center"></td>
+<td>7TDM 920T</td>
+<td>968ES 946ES 926EJS</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Cortex-A</strong></td>
+<td align="center">应用处理器</td>
+<td></td>
+<td></td>
+<td>1136&#x2F;1176</td>
+<td>A5&#x2F;A8&#x2F;A15</td>
+<td>A35&#x2F;A55&#x2F;A72&#x2F;A75</td>
+</tr>
+<tr>
+<td><strong>Cortex-R</strong></td>
+<td align="center">实时处理器</td>
+<td></td>
+<td></td>
+<td>1156T2</td>
+<td>R8&#x2F;R7R5&#x2F;R4</td>
+<td>R52</td>
+</tr>
+<tr>
+<td><strong>Cortex-M</strong></td>
+<td align="center">微控制器</td>
+<td></td>
+<td></td>
+<td>M0&#x2F;M0+</td>
+<td>M7&#x2F;M4&#x2F;M3</td>
+<td>M33&#x2F;M23</td>
+</tr>
+</tbody></table>
+<p><strong>SecureCore</strong>，基于ARM-M架构，增强了嵌入式安全，主要有SC000和SC300，分别基于Cortex-M0 (v6-M)和Cortex-M3(v7-M)。</p>
+<p><strong>Neoverse</strong>（服务器端），面向云端到边缘的HPC、AI&#x2F;ML加速等领域，是Cortex之外的另一条面向服务器和基础设施设备的核心IP。如初代发布即收获不错市场反响的Neoverse N1核心IP，亚马逊Graviton2、Ampere Altra是基于IP设计的产品。</p>
+<hr>
+<h2 id="2-Cortex-A处理器发展脉络"><a href="#2-Cortex-A处理器发展脉络" class="headerlink" title="2. Cortex-A处理器发展脉络"></a>2. Cortex-A处理器发展脉络</h2><p>Cortex-A系列处理器目前主要有超低功耗核、小核、大核、超大核4个系列</p>
+<table>
+<thead>
+<tr>
+<th align="center">超低功耗</th>
+<th align="center">超低功耗</th>
+<th align="center">大核</th>
+<th align="center">A8(2005)</th>
+<th align="center">超大核</th>
+<th align="center">小核</th>
+<th align="center">未演进</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A9(2007)</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">A5(2009)</td>
+<td align="center"></td>
+<td align="center">A15(2010)</td>
+<td align="center"></td>
+<td align="center">A7(2011)</td>
+<td align="center">A12(2013)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">A35(2015)</td>
+<td align="center"></td>
+<td align="center">A57(2012)</td>
+<td align="center"></td>
+<td align="center">A53(2015)</td>
+<td align="center">A17(2014)</td>
+</tr>
+<tr>
+<td align="center">A32(2016)</td>
+<td align="center">A34(2019)</td>
+<td align="center"></td>
+<td align="center">A72(2015)</td>
+<td align="center"></td>
+<td align="center">A55(2017)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A73(2016)</td>
+<td align="center"></td>
+<td align="center">A510(2021)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A75(2017)</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A76(2018)</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A77(2019)</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A78(2020)</td>
+<td align="center"></td>
+<td align="center">X1(2020)</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A710(2021)</td>
+<td align="center"></td>
+<td align="center">X2(2021)</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A715(2022)</td>
+<td align="center"></td>
+<td align="center">X3(2022)</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<ol>
+<li>作为<strong>超低功耗</strong>的处理器：ARMv7架构的A5和A7，ARMv8架构的A35、A32和A34；</li>
+<li>作为<strong>小核</strong>的处理器有：ARMv7架构的A8和A9，ARMv8架构的A53和A55，以及ARMv9架构的A510；</li>
+<li>作为<strong>大核</strong>的处理器有：ARMv7架构的A15和A17，ARMv8架构的A57、A72、A73、A75、A76、A77和A78，以及ARMv9架构的A710和A715；</li>
+<li>作为<strong>超大核</strong>的处理器有：ARMv8架构的X1，以及ARMv9架构的X2和X3；</li>
 </ol>
-<h2 id="2、传输协议：数据的“交通规则”"><a href="#2、传输协议：数据的“交通规则”" class="headerlink" title="2、传输协议：数据的“交通规则”"></a>2、传输协议：数据的“交通规则”</h2><ol>
-<li><h4 id="SATA协议"><a href="#SATA协议" class="headerlink" title="SATA协议"></a>SATA协议</h4><p>核心局限：基于AHCI指令集，单队列深度32，无法发挥多核CPU性能<br>Linux驱动：<code>ahci</code>模块（设备节点<code>/dev/sd*</code>）<br>典型场景：工控设备的低速日志存储（如RS485数据记录）</p>
-</li>
-<li><h4 id="PCIe协议"><a href="#PCIe协议" class="headerlink" title="PCIe协议"></a>PCIe协议</h4><p>本质定位：物理层和数据链路层规范（非存储专用协议）<br>存储应用：需配合上层协议（如NVMe）实现存储功能</p>
-</li>
-<li><h4 id="NVMe协议"><a href="#NVMe协议" class="headerlink" title="NVMe协议"></a>NVMe协议</h4><p>设计理念：为PCIe SSD定制的轻量级协议，支持64K队列深度<br>性能优势：4K随机读写性能可达SATA SSD的5倍以上<br>Linux驱动：<code>nvme</code>模块（设备节点<code>/dev/nvme*</code>）</p>
-</li>
-</ol>
-<h2 id="3、PCI-E"><a href="#3、PCI-E" class="headerlink" title="3、PCI-E"></a>3、PCI-E</h2><p>PCI-Express(peripheral component interconnect express)是一种高速串行计算机扩展总线标准，是由英特尔在2001年提出的，旨在替代旧的PCI，PCI-X和AGP总线标准。</p>
-<h4 id="（1）PCI-E-x16"><a href="#（1）PCI-E-x16" class="headerlink" title="（1）PCI-E x16"></a>（1）PCI-E x16</h4><p>插槽全长89mm，有164根针脚，主要用于显卡以及RAID阵列卡等。一般靠主板外侧端有一卡口，将16x分为前后两组，较短的插槽有22根针脚，主要用于供电，较长的插槽142根，主要用于数据传输。</p>
-<h4 id="（2）PCI-E-x8"><a href="#（2）PCI-E-x8" class="headerlink" title="（2）PCI-E x8"></a>（2）PCI-E x8</h4><p>插槽全长56mm，有98根针脚，与PCI-E x16比较，主要是数据针脚减少至76根，短的供电针脚仍然是22针脚。</p>
-<h4 id="（3）PCI-E-x4"><a href="#（3）PCI-E-x4" class="headerlink" title="（3）PCI-E x4"></a>（3）PCI-E x4</h4><p>插槽的长度为39mm，是在PCI-E x16插槽的基础上，以减少数据针脚的方式实现，主要用于PCI-E SSD固态硬盘，或者通过转接卡安装的M.2 SSD固态硬盘。</p>
-<h4 id="（4）PCI-E-x1"><a href="#（4）PCI-E-x1" class="headerlink" title="（4）PCI-E x1"></a>（4）PCI-E x1</h4><p>插槽的长度是最短的，仅有25mm，相比PCI-E x16插槽，其数据针脚是大幅度减少至14个。PCI-E x1主要用途是独立网卡、独立声卡、USB 3.0&#x2F;3.1扩展卡等，是用来替代原来的PCI设备的。</p>
+<table>
+<thead>
+<tr>
+<th align="center">时间</th>
+<th align="center">2005-2014</th>
+<th align="center">2012</th>
+<th align="center">2015</th>
+<th align="center">2016</th>
+<th align="center">2017</th>
+<th align="center">2018</th>
+<th align="center">2019</th>
+<th align="center">2020</th>
+<th align="center">2021</th>
+<th align="center">2022</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">超大核</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">X1</td>
+<td align="center">X2</td>
+<td align="center">X3</td>
+</tr>
+<tr>
+<td align="center">大核</td>
+<td align="center">A15  A17</td>
+<td align="center">A57</td>
+<td align="center">A72</td>
+<td align="center">A73</td>
+<td align="center">A75</td>
+<td align="center">A76</td>
+<td align="center">A77</td>
+<td align="center">A78</td>
+<td align="center">A710</td>
+<td align="center">A715</td>
+</tr>
+<tr>
+<td align="center">小核</td>
+<td align="center">A8  A9</td>
+<td align="center">A53</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A55</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A510</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">超低功耗</td>
+<td align="center">A5  A7</td>
+<td align="center"></td>
+<td align="center">A35</td>
+<td align="center">A32</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A34</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
 
                 
               </div>
@@ -334,7 +554,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/github.io/tags/%E5%AD%98%E5%82%A8/" class="print-no-link">#存储</a>
+        <a href="/github.io/tags/%E5%A4%84%E7%90%86%E5%99%A8%E8%8A%AF%E7%89%87/" class="print-no-link">#处理器芯片</a>
       
     </div>
   
@@ -346,8 +566,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>存储系统的接口和协议</div>
-      <div>https://wangyuxue-ouc.github.io/github.io/2025/02/12/存储系统的接口和协议/</div>
+      <div>ARM处理器脉络</div>
+      <div>https://wangyuxue-ouc.github.io/github.io/2025/02/23/ARM处理器脉络/</div>
     </div>
     <div class="license-meta">
       
@@ -359,7 +579,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月12日</div>
+          <div>2025年2月23日</div>
         </div>
       
       
@@ -391,9 +611,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/github.io/2025/02/23/ARM%E5%A4%84%E7%90%86%E5%99%A8%E7%AE%80%E4%BB%8B/" title="ARM处理器简介">
+                      <a href="/github.io/2025/03/23/%E5%A4%84%E7%90%86%E5%99%A8%E8%8A%AF%E7%89%87%E7%9A%84%E6%B4%BE%E7%B3%BB/" title="处理器芯片的派系">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ARM处理器简介</span>
+                        <span class="hidden-mobile">处理器芯片的派系</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
