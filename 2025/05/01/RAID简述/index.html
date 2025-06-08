@@ -16,22 +16,22 @@
   <meta name="author" content="Wang _Fitz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="树莓派（Raspberry Pi）是一款广受欢迎的单板计算机，由英国的Raspberry Pi基金会开发。它的初衷是为了促进计算机科学教育，但由于其强大的功能和低廉的价格，迅速在全球范围内得到了广泛应用。     型号 芯片 CPU 频率 内存 发布时间    树莓派A型（未发售） - - - 256MB 未发售   树莓派B型（第一代） Broadcom BCM2835 ARM1176JZF-S">
+    <meta name="description" content="RAID 是一种用于提高数据存储性能和可靠性的技术，英文全称：Redundant Array of Independent Disks，中文意思：独立磁盘冗余阵列。RAID 系统由两个或多个并行工作的驱动器组成，这些可以是机械硬盘或者固态硬盘。RAID 可分为软件 RAID 和硬件 RAID，在软件 RAID 中，内存架构由操作系统管理，在硬件 RAID 的情况下，磁盘内有一个专用控制器和处理器来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树莓派版本变迁与差异">
-<meta property="og:url" content="https://wangyuxue-ouc.github.io/github.io/2025/02/10/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%89%88%E6%9C%AC%E5%8F%98%E8%BF%81%E4%B8%8E%E5%B7%AE%E5%BC%82/index.html">
+<meta property="og:title" content="RAID简述">
+<meta property="og:url" content="https://wangyuxue-ouc.github.io/github.io/2025/05/01/RAID%E7%AE%80%E8%BF%B0/index.html">
 <meta property="og:site_name" content="耕海纪">
-<meta property="og:description" content="树莓派（Raspberry Pi）是一款广受欢迎的单板计算机，由英国的Raspberry Pi基金会开发。它的初衷是为了促进计算机科学教育，但由于其强大的功能和低廉的价格，迅速在全球范围内得到了广泛应用。     型号 芯片 CPU 频率 内存 发布时间    树莓派A型（未发售） - - - 256MB 未发售   树莓派B型（第一代） Broadcom BCM2835 ARM1176JZF-S">
+<meta property="og:description" content="RAID 是一种用于提高数据存储性能和可靠性的技术，英文全称：Redundant Array of Independent Disks，中文意思：独立磁盘冗余阵列。RAID 系统由两个或多个并行工作的驱动器组成，这些可以是机械硬盘或者固态硬盘。RAID 可分为软件 RAID 和硬件 RAID，在软件 RAID 中，内存架构由操作系统管理，在硬件 RAID 的情况下，磁盘内有一个专用控制器和处理器来">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-10T13:48:17.000Z">
-<meta property="article:modified_time" content="2025-05-31T11:32:01.639Z">
+<meta property="article:published_time" content="2025-05-01T14:35:27.000Z">
+<meta property="article:modified_time" content="2025-06-05T14:48:42.512Z">
 <meta property="article:author" content="Wang _Fitz">
-<meta property="article:tag" content="电脑主板">
+<meta property="article:tag" content="存储系统">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>树莓派版本变迁与差异 - 耕海纪</title>
+  <title>RAID简述 - 耕海纪</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="树莓派版本变迁与差异"></span>
+            <span id="subtitle" data-typed-text="RAID简述"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-10 21:48" pubdate>
-          2025年2月10日 晚上
+        <time datetime="2025-05-01 22:35" pubdate>
+          2025年5月1日 晚上
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          284 字
+          715 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          3 分钟
+          6 分钟
         
       </span>
     
@@ -296,135 +296,124 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">树莓派版本变迁与差异</h1>
+            <h1 id="seo-header">RAID简述</h1>
             
             
               <div class="markdown-body">
                 
-                <p>树莓派（Raspberry Pi）是一款广受欢迎的单板计算机，由英国的Raspberry Pi基金会开发。它的初衷是为了促进计算机科学教育，但由于其强大的功能和低廉的价格，迅速在全球范围内得到了广泛应用。</p>
+                <p>RAID 是一种用于提高数据存储性能和可靠性的技术，英文全称：<code>Redundant Array of Independent Disks</code>，中文意思：独立磁盘冗余阵列。RAID 系统由两个或多个并行工作的驱动器组成，这些可以是机械硬盘或者固态硬盘。RAID 可分为软件 RAID 和硬件 RAID，在软件 RAID 中，内存架构由操作系统管理，在硬件 RAID 的情况下，磁盘内有一个专用控制器和处理器来管理内存。</p>
+<h2 id="1-基本-RAID-级别"><a href="#1-基本-RAID-级别" class="headerlink" title="1. 基本 RAID 级别"></a>1. 基本 RAID 级别</h2><ul>
+<li><h4 id="RAID-0"><a href="#RAID-0" class="headerlink" title="RAID 0"></a>RAID 0</h4></li>
+</ul>
+<p>读写速度≈单盘速度×N（N为硬盘数），但在数据安全方面，任意一盘故障，数据全毁，仅适合临时渲染缓存素材，不适合永久存储重要资料。</p>
+<ul>
+<li><h4 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h4></li>
+</ul>
+<p>支持单盘故障无损恢复，重建速度最快，但代价就是总硬盘容量利用率仅50%左右，两盘当一盘使用来确保数据安全。</p>
+<ul>
+<li><h4 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h4></li>
+</ul>
+<p>允许单盘故障，容量利用率≈(N-1)&#x2F;N，数据有冗余保障但恢复难度不低，需专用校验算法。</p>
+<ul>
+<li><h4 id="RAID-6"><a href="#RAID-6" class="headerlink" title="RAID 6"></a>RAID 6</h4></li>
+</ul>
+<p>RAID 6 使用双奇偶校验块来实现比 RAID 5 更好的数据冗余，这增加了阵列中最多两个驱动器故障的容错能力。每个磁盘都有两个奇偶校验块，它们存储在阵列中的不同磁盘上。</p>
 <hr>
-<table>
+<h2 id="2-跨区-RAID-级别"><a href="#2-跨区-RAID-级别" class="headerlink" title="2. 跨区 RAID 级别"></a>2. 跨区 RAID 级别</h2><ul>
+<li><h4 id="RAID-10"><a href="#RAID-10" class="headerlink" title="RAID 10"></a>RAID 10</h4></li>
+</ul>
+<p>相当于RAID 1+RAID 0嵌套，允许半数硬盘同时故障 <strong>，</strong>适合内容创作&#x2F;金融&#x2F;医疗等重要行业核心数据存储，不过成本高昂。需至少4盘组成。</p>
+<ul>
+<li><h4 id="RAID-50"><a href="#RAID-50" class="headerlink" title="RAID 50"></a>RAID 50</h4></li>
+</ul>
+<p>RAID 50 由两个或多个RAID 5阵列组成，形成类似RAID 0的条带化阵列。与配置相同数量的RAID 5相比，它提供了更高的访问性能和更强的数据保护性能。</p>
+<ul>
+<li><h4 id="RAID-60"><a href="#RAID-60" class="headerlink" title="RAID 60"></a>RAID 60</h4></li>
+</ul>
+<p>RAID 60有时称为 RAID 6+RAID 0，即将多个 RAID 6 集（带双奇偶校验的条带化）与 RAID 0（条带化）结合在一起。双奇偶校验允许每个 RAID 6 阵列中的两个驱动器发生故障，而条带化可提高容量和性能，而无需向每个 RAID 6 阵列添加驱动器。</p>
+<hr>
+<h2 id="3-RAID级别比较"><a href="#3-RAID级别比较" class="headerlink" title="3. RAID级别比较"></a>3. RAID级别比较</h2><table>
 <thead>
 <tr>
-<th>型号</th>
-<th align="center">芯片</th>
-<th align="center">CPU</th>
-<th align="center">频率</th>
-<th align="center">内存</th>
-<th align="center">发布时间</th>
+<th align="center">特征</th>
+<th align="center">RAID 0</th>
+<th align="center">RAID 1</th>
+<th align="center">RAID 5</th>
+<th align="center">RAID 6</th>
+<th align="center">RAID 10</th>
+<th align="center">RAID 50</th>
+<th align="center">RAID 60</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>树莓派A型（未发售）</td>
-<td align="center">-</td>
-<td align="center">-</td>
-<td align="center">-</td>
-<td align="center">256MB</td>
-<td align="center">未发售</td>
+<td align="center">最小驱动器</td>
+<td align="center">1个</td>
+<td align="center">2个</td>
+<td align="center">3个</td>
+<td align="center">4个</td>
+<td align="center">4个</td>
+<td align="center">6个</td>
+<td align="center">8个</td>
 </tr>
 <tr>
-<td>树莓派B型（第一代）</td>
-<td align="center">Broadcom BCM2835</td>
-<td align="center">ARM1176JZF-S</td>
-<td align="center">700 MHz</td>
-<td align="center">512MB</td>
-<td align="center">2012年9月</td>
+<td align="center">最大驱动器</td>
+<td align="center">32</td>
+<td align="center">2个</td>
+<td align="center">32</td>
+<td align="center">32</td>
+<td align="center">16</td>
+<td align="center">192</td>
+<td align="center">192</td>
 </tr>
 <tr>
-<td>树莓派B+型（第一代改进版）</td>
-<td align="center">Broadcom BCM2835</td>
-<td align="center">ARM1176JZF-S</td>
-<td align="center">700 MHz</td>
-<td align="center">512MB</td>
-<td align="center">2014年7月</td>
+<td align="center">对硬盘故障的容忍度</td>
+<td align="center">没有任何</td>
+<td align="center">1 个驱动器</td>
+<td align="center">1 个驱动器</td>
+<td align="center">2个驱动器</td>
+<td align="center">每个跨度 1 个驱动器</td>
+<td align="center">每个跨度 1 个驱动器</td>
+<td align="center">每个跨度 2 个驱动器</td>
 </tr>
 <tr>
-<td>树莓派A+型（第一代低规格版）</td>
-<td align="center">Broadcom BCM2835</td>
-<td align="center">ARM1176JZF-S</td>
-<td align="center">700 MHz</td>
-<td align="center">256MB（后增至512MB）</td>
-<td align="center">2014年11月</td>
+<td align="center">重建时间</td>
+<td align="center">没有任何</td>
+<td align="center">快速地</td>
+<td align="center">减缓</td>
+<td align="center">缓慢</td>
+<td align="center">快速地</td>
+<td align="center">缓慢</td>
+<td align="center">缓慢</td>
 </tr>
 <tr>
-<td>树莓派2B型（第二代）</td>
-<td align="center">Broadcom BCM2836&#x2F;7</td>
-<td align="center">四核ARM Cortex-A7</td>
-<td align="center">900 MHz</td>
-<td align="center">1GB</td>
-<td align="center">2015年2月</td>
+<td align="center">读写性能</td>
+<td align="center">出色的</td>
+<td align="center">非常好</td>
+<td align="center">出色的</td>
+<td align="center">出色的</td>
+<td align="center">非常好</td>
+<td align="center">出色的</td>
+<td align="center">出色的</td>
 </tr>
 <tr>
-<td>树莓派Zero</td>
-<td align="center">Broadcom BCM2835</td>
-<td align="center">ARM11</td>
-<td align="center">1 GHz</td>
-<td align="center">512MB</td>
-<td align="center">2015年11月</td>
+<td align="center">阵列性能下降</td>
+<td align="center">没有任何</td>
+<td align="center">非常好</td>
+<td align="center">满意的</td>
+<td align="center">满意的</td>
+<td align="center">非常好</td>
+<td align="center">好的</td>
+<td align="center">好的</td>
 </tr>
 <tr>
-<td>树莓派3B型（第三代）</td>
-<td align="center">Broadcom BCM2837</td>
-<td align="center">四核ARM Cortex-A53</td>
-<td align="center">1.2 GHz</td>
-<td align="center">1GB、2GB、4GB可选</td>
-<td align="center">2016年2月</td>
-</tr>
-<tr>
-<td>树莓派Zero W</td>
-<td align="center">Broadcom BCM2835</td>
-<td align="center">ARM11</td>
-<td align="center">1 GHz</td>
-<td align="center">512MB</td>
-<td align="center">2017年2月</td>
-</tr>
-<tr>
-<td>树莓派3B+型（第三代改进版）</td>
-<td align="center">Broadcom BCM2837B0</td>
-<td align="center">四核ARM Cortex-A53</td>
-<td align="center">1.4 GHz</td>
-<td align="center">1GB、2GB、4GB可选</td>
-<td align="center">2018年3月</td>
-</tr>
-<tr>
-<td>树莓派3A+型（第三代低规格版）</td>
-<td align="center">Broadcom BCM2837B0</td>
-<td align="center">四核ARM Cortex-A53</td>
-<td align="center">1.4 GHz</td>
-<td align="center">512MB</td>
-<td align="center">2018年11月</td>
-</tr>
-<tr>
-<td>树莓派4B型（第四代）</td>
-<td align="center">Broadcom BCM2711</td>
-<td align="center">四核ARM Cortex-A72</td>
-<td align="center">1.5 GHz</td>
-<td align="center">1GB、2GB、4GB、8GB可选</td>
-<td align="center">2019年6月</td>
-</tr>
-<tr>
-<td>树莓派400（第四代一体机）</td>
-<td align="center">Broadcom BCM2711</td>
-<td align="center">四核ARM Cortex-A72</td>
-<td align="center">1.8 GHz</td>
-<td align="center">4GB</td>
-<td align="center">2020年11月</td>
-</tr>
-<tr>
-<td>树莓派Pico</td>
-<td align="center">Raspberry Pi RP2040</td>
-<td align="center">双核ARM Cortex-M0+</td>
-<td align="center">133 MHz</td>
-<td align="center">264KB SRAM</td>
-<td align="center">2021年1月</td>
-</tr>
-<tr>
-<td>树莓派5（第五代）</td>
-<td align="center">Broadcom BCM2712</td>
-<td align="center">四核ARM Cortex-A76</td>
-<td align="center">2.4 GHz</td>
-<td align="center">4GB、8GB可选</td>
-<td align="center">2023年9月</td>
+<td align="center">容量开销</td>
+<td align="center">没有任何</td>
+<td align="center">一半</td>
+<td align="center">1 个驱动器</td>
+<td align="center">2个驱动器</td>
+<td align="center">一半</td>
+<td align="center">每个跨度 1 个驱动器</td>
+<td align="center">每个跨度 2 个驱动器</td>
 </tr>
 </tbody></table>
 
@@ -439,7 +428,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/github.io/tags/%E7%94%B5%E8%84%91%E4%B8%BB%E6%9D%BF/" class="print-no-link">#电脑主板</a>
+        <a href="/github.io/tags/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/" class="print-no-link">#存储系统</a>
       
     </div>
   
@@ -451,8 +440,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>树莓派版本变迁与差异</div>
-      <div>https://wangyuxue-ouc.github.io/github.io/2025/02/10/树莓派版本变迁与差异/</div>
+      <div>RAID简述</div>
+      <div>https://wangyuxue-ouc.github.io/github.io/2025/05/01/RAID简述/</div>
     </div>
     <div class="license-meta">
       
@@ -464,7 +453,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月10日</div>
+          <div>2025年5月1日</div>
         </div>
       
       
@@ -496,18 +485,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/github.io/2025/02/11/Wi-Fi%20%E6%A0%87%E5%87%86%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%8F%98%E8%BF%81/" title="Wi-Fi 标准和类型变迁">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Wi-Fi 标准和类型变迁</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/github.io/2023/04/01/%E8%80%95%E6%B5%B7%E7%BA%AA/" title="耕海纪">
-                        <span class="hidden-mobile">耕海纪</span>
+                      <a href="/github.io/2025/04/23/SSD%E7%9A%84%E7%89%A9%E7%90%86%E6%8E%A5%E5%8F%A3%E4%B8%8E%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE/" title="SSD的物理接口与传输协议">
+                        <span class="hidden-mobile">SSD的物理接口与传输协议</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
