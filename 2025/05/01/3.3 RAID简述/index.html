@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/github.io/img/fluid.png">
+  <link rel="icon" href="/github.io/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Wang _Fitz">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="RAID 是一种用于提高数据存储性能和可靠性的技术，英文全称：Redundant Array of Independent Disks，中文意思：独立磁盘冗余阵列。RAID 系统由两个或多个并行工作的驱动器组成，这些可以是机械硬盘或者固态硬盘。RAID 可分为软件 RAID 和硬件 RAID，在软件 RAID 中，内存架构由操作系统管理，在硬件 RAID 的情况下，磁盘内有一个专用控制器和处理器来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RAID简述">
+<meta property="og:url" content="https://wangyuxue-ouc.github.io/github.io/2025/05/01/3.3%20RAID%E7%AE%80%E8%BF%B0/index.html">
+<meta property="og:site_name" content="耕海纪">
+<meta property="og:description" content="RAID 是一种用于提高数据存储性能和可靠性的技术，英文全称：Redundant Array of Independent Disks，中文意思：独立磁盘冗余阵列。RAID 系统由两个或多个并行工作的驱动器组成，这些可以是机械硬盘或者固态硬盘。RAID 可分为软件 RAID 和硬件 RAID，在软件 RAID 中，内存架构由操作系统管理，在硬件 RAID 的情况下，磁盘内有一个专用控制器和处理器来">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-05-01T14:35:27.000Z">
+<meta property="article:modified_time" content="2025-06-05T14:48:42.512Z">
+<meta property="article:author" content="Wang _Fitz">
+<meta property="article:tag" content="存储系统">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>RAID简述 - 耕海纪</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/github.io/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/github.io/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/github.io/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wangyuxue-ouc.github.io","root":"/github.io/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/github.io/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/github.io/js/utils.js" ></script>
+  <script  src="/github.io/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/github.io/">
+      <strong>耕海纪</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github.io/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github.io/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github.io/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github.io/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/github.io/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="RAID简述"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-05-01 22:35" pubdate>
+          2025年5月1日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          715 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">RAID简述</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>RAID 是一种用于提高数据存储性能和可靠性的技术，英文全称：<code>Redundant Array of Independent Disks</code>，中文意思：独立磁盘冗余阵列。RAID 系统由两个或多个并行工作的驱动器组成，这些可以是机械硬盘或者固态硬盘。RAID 可分为软件 RAID 和硬件 RAID，在软件 RAID 中，内存架构由操作系统管理，在硬件 RAID 的情况下，磁盘内有一个专用控制器和处理器来管理内存。</p>
+<h2 id="1-基本-RAID-级别"><a href="#1-基本-RAID-级别" class="headerlink" title="1. 基本 RAID 级别"></a>1. 基本 RAID 级别</h2><ul>
+<li><h4 id="RAID-0"><a href="#RAID-0" class="headerlink" title="RAID 0"></a>RAID 0</h4></li>
+</ul>
+<p>读写速度≈单盘速度×N（N为硬盘数），但在数据安全方面，任意一盘故障，数据全毁，仅适合临时渲染缓存素材，不适合永久存储重要资料。</p>
+<ul>
+<li><h4 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h4></li>
+</ul>
+<p>支持单盘故障无损恢复，重建速度最快，但代价就是总硬盘容量利用率仅50%左右，两盘当一盘使用来确保数据安全。</p>
+<ul>
+<li><h4 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h4></li>
+</ul>
+<p>允许单盘故障，容量利用率≈(N-1)&#x2F;N，数据有冗余保障但恢复难度不低，需专用校验算法。</p>
+<ul>
+<li><h4 id="RAID-6"><a href="#RAID-6" class="headerlink" title="RAID 6"></a>RAID 6</h4></li>
+</ul>
+<p>RAID 6 使用双奇偶校验块来实现比 RAID 5 更好的数据冗余，这增加了阵列中最多两个驱动器故障的容错能力。每个磁盘都有两个奇偶校验块，它们存储在阵列中的不同磁盘上。</p>
+<hr>
+<h2 id="2-跨区-RAID-级别"><a href="#2-跨区-RAID-级别" class="headerlink" title="2. 跨区 RAID 级别"></a>2. 跨区 RAID 级别</h2><ul>
+<li><h4 id="RAID-10"><a href="#RAID-10" class="headerlink" title="RAID 10"></a>RAID 10</h4></li>
+</ul>
+<p>相当于RAID 1+RAID 0嵌套，允许半数硬盘同时故障 <strong>，</strong>适合内容创作&#x2F;金融&#x2F;医疗等重要行业核心数据存储，不过成本高昂。需至少4盘组成。</p>
+<ul>
+<li><h4 id="RAID-50"><a href="#RAID-50" class="headerlink" title="RAID 50"></a>RAID 50</h4></li>
+</ul>
+<p>RAID 50 由两个或多个RAID 5阵列组成，形成类似RAID 0的条带化阵列。与配置相同数量的RAID 5相比，它提供了更高的访问性能和更强的数据保护性能。</p>
+<ul>
+<li><h4 id="RAID-60"><a href="#RAID-60" class="headerlink" title="RAID 60"></a>RAID 60</h4></li>
+</ul>
+<p>RAID 60有时称为 RAID 6+RAID 0，即将多个 RAID 6 集（带双奇偶校验的条带化）与 RAID 0（条带化）结合在一起。双奇偶校验允许每个 RAID 6 阵列中的两个驱动器发生故障，而条带化可提高容量和性能，而无需向每个 RAID 6 阵列添加驱动器。</p>
+<hr>
+<h2 id="3-RAID级别比较"><a href="#3-RAID级别比较" class="headerlink" title="3. RAID级别比较"></a>3. RAID级别比较</h2><table>
+<thead>
+<tr>
+<th align="center">特征</th>
+<th align="center">RAID 0</th>
+<th align="center">RAID 1</th>
+<th align="center">RAID 5</th>
+<th align="center">RAID 6</th>
+<th align="center">RAID 10</th>
+<th align="center">RAID 50</th>
+<th align="center">RAID 60</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">最小驱动器</td>
+<td align="center">1个</td>
+<td align="center">2个</td>
+<td align="center">3个</td>
+<td align="center">4个</td>
+<td align="center">4个</td>
+<td align="center">6个</td>
+<td align="center">8个</td>
+</tr>
+<tr>
+<td align="center">最大驱动器</td>
+<td align="center">32</td>
+<td align="center">2个</td>
+<td align="center">32</td>
+<td align="center">32</td>
+<td align="center">16</td>
+<td align="center">192</td>
+<td align="center">192</td>
+</tr>
+<tr>
+<td align="center">对硬盘故障的容忍度</td>
+<td align="center">没有任何</td>
+<td align="center">1 个驱动器</td>
+<td align="center">1 个驱动器</td>
+<td align="center">2个驱动器</td>
+<td align="center">每个跨度 1 个驱动器</td>
+<td align="center">每个跨度 1 个驱动器</td>
+<td align="center">每个跨度 2 个驱动器</td>
+</tr>
+<tr>
+<td align="center">重建时间</td>
+<td align="center">没有任何</td>
+<td align="center">快速地</td>
+<td align="center">减缓</td>
+<td align="center">缓慢</td>
+<td align="center">快速地</td>
+<td align="center">缓慢</td>
+<td align="center">缓慢</td>
+</tr>
+<tr>
+<td align="center">读写性能</td>
+<td align="center">出色的</td>
+<td align="center">非常好</td>
+<td align="center">出色的</td>
+<td align="center">出色的</td>
+<td align="center">非常好</td>
+<td align="center">出色的</td>
+<td align="center">出色的</td>
+</tr>
+<tr>
+<td align="center">阵列性能下降</td>
+<td align="center">没有任何</td>
+<td align="center">非常好</td>
+<td align="center">满意的</td>
+<td align="center">满意的</td>
+<td align="center">非常好</td>
+<td align="center">好的</td>
+<td align="center">好的</td>
+</tr>
+<tr>
+<td align="center">容量开销</td>
+<td align="center">没有任何</td>
+<td align="center">一半</td>
+<td align="center">1 个驱动器</td>
+<td align="center">2个驱动器</td>
+<td align="center">一半</td>
+<td align="center">每个跨度 1 个驱动器</td>
+<td align="center">每个跨度 2 个驱动器</td>
+</tr>
+</tbody></table>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/github.io/tags/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/" class="print-no-link">#存储系统</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>RAID简述</div>
+      <div>https://wangyuxue-ouc.github.io/github.io/2025/05/01/3.3 RAID简述/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Wang _Fitz</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年5月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/github.io/2025/05/14/2.3%20Arduino%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E7%89%88%E6%9C%AC%E7%B1%BB%E5%9E%8B/" title="Arduino开发板的版本类型">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Arduino开发板的版本类型</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/github.io/2025/04/23/3.2%20SSD%E7%9A%84%E7%89%A9%E7%90%86%E6%8E%A5%E5%8F%A3%E4%B8%8E%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE/" title="SSD的物理接口与传输协议">
+                        <span class="hidden-mobile">SSD的物理接口与传输协议</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/github.io/js/events.js" ></script>
+<script  src="/github.io/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/github.io/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/github.io/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/github.io/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

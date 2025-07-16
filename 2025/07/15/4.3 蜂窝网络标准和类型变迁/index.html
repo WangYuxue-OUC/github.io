@@ -1,0 +1,641 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/github.io/img/fluid.png">
+  <link rel="icon" href="/github.io/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Wang _Fitz">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="严格来说，是海因里希·赫兹揭开了无线历史的序幕。1886 年，他首次成功产生并证实了无线电波的存在。1912 年，沉没的泰坦尼克号使用古列尔莫·马可尼发明的第一个无线电报系统发出了 SOS 紧急求救信号。人们掌握基础物理原理后，移动通信的标准化进程才能开始。而蜂窝手机技术的历史始于1947年12月11日，贝尔实验室工程师道格拉斯·H·林（Douglas H. Ring）撰写了一份内部备忘录，建议A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="蜂窝网络标准和类型变迁">
+<meta property="og:url" content="https://wangyuxue-ouc.github.io/github.io/2025/07/15/4.3%20%E8%9C%82%E7%AA%9D%E7%BD%91%E7%BB%9C%E6%A0%87%E5%87%86%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%8F%98%E8%BF%81/index.html">
+<meta property="og:site_name" content="耕海纪">
+<meta property="og:description" content="严格来说，是海因里希·赫兹揭开了无线历史的序幕。1886 年，他首次成功产生并证实了无线电波的存在。1912 年，沉没的泰坦尼克号使用古列尔莫·马可尼发明的第一个无线电报系统发出了 SOS 紧急求救信号。人们掌握基础物理原理后，移动通信的标准化进程才能开始。而蜂窝手机技术的历史始于1947年12月11日，贝尔实验室工程师道格拉斯·H·林（Douglas H. Ring）撰写了一份内部备忘录，建议A">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-15T13:28:17.000Z">
+<meta property="article:modified_time" content="2025-07-16T11:15:39.771Z">
+<meta property="article:author" content="Wang _Fitz">
+<meta property="article:tag" content="无线通讯">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>蜂窝网络标准和类型变迁 - 耕海纪</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/github.io/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/github.io/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/github.io/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wangyuxue-ouc.github.io","root":"/github.io/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/github.io/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/github.io/js/utils.js" ></script>
+  <script  src="/github.io/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/github.io/">
+      <strong>耕海纪</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github.io/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github.io/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github.io/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github.io/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/github.io/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="蜂窝网络标准和类型变迁"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-15 21:28" pubdate>
+          2025年7月15日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">蜂窝网络标准和类型变迁</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>严格来说，是海因里希·赫兹揭开了无线历史的序幕。1886 年，他首次成功产生并证实了无线电波的存在。1912 年，沉没的泰坦尼克号使用古列尔莫·马可尼发明的第一个无线电报系统发出了 SOS 紧急求救信号。人们掌握基础物理原理后，移动通信的标准化进程才能开始。而蜂窝手机技术的历史始于1947年12月11日，贝尔实验室工程师道格拉斯·H·林（Douglas H. Ring）撰写了一份内部备忘录，建议AT&amp;T开发蜂窝电话系统。</p>
+<h2 id="1G"><a href="#1G" class="headerlink" title="1G"></a>1G</h2><p>第一代移动通信系统是模拟蜂窝系统，它采用频分多址(FrequencyDivision Multiple Access,FDMA)技术。第一代移动通信系统打破了传统的大区制无线电广播和无线电台的技术理念，基于蜂窝结构的频率复用组网方案，提升了频谱利用的效率，基本保证了移动场景下话音业务的连续性，为移动通信的快速普及和应用奠定了基础。典型的第一代通信系统有北美的高级移动电话系统(AdvancedMobile Phone System,AMPS)、英国的全接入通信系统(TotalAccess Communication System,TACS)等。第一代通信系统在20世纪80年代初实现了蜂窝网的商业化，并于90年代末退出历史舞台，是移动通信发展史上重要的里程碑。模拟蜂窝系统的缺点是容量小、业务种类单一(话音业务)、传输质量不高、保密性差、制式不统一，且设备难以小型化。</p>
+<h2 id="2G"><a href="#2G" class="headerlink" title="2G"></a>2G</h2><p>第二代移动通信系统是窄带数字蜂窝系统，它采用时分多址(TimeDivision Multiple Access,TDMA)或码分多址(Code Division Multiple Access，CDMA)技术。典型的系统有欧洲的GSM(采用TDMA技术，20世纪90年代初期商用)系统、北美的IS-95(采用CDMA技术，20世纪90年代中期商用)系统等。第二代移动通信系统在容量和性能上都比第一代系统有了很大的提高，不仅可以提供话音业务，还可以提供低速数据业务。第二代移动通信系统使移动通信得到了广泛的应用和普及，取得了商业上的巨大成功。第二代移动通信系统的技术和性能还在不断地演进和提高，形成了全球移动通信系统( Global System for Mobile Communications，GSM)的演进版本通用分组无线服务(General Packet Radio Service,GPRS)和增强型数据速率GSM演进(EDGE)，以及CDMA的演进版本CDMA1x，以提供更高速率的电路和分组数据业务。从1990年商用到2014年，全球范围内通过第二代移动通信系统接入的用户数超过40亿户。</p>
+<h2 id="3G"><a href="#3G" class="headerlink" title="3G"></a>3G</h2><p>第三代移动通信系统开启了由以话音业务为主向以数据业务为主的移动通信发展时代的转变。第三代移动通信标准的讨论始于20世纪90年代，国际电信联盟(ITU)在2000年5月召开的全球无线电大会(WRC-2000)上正式批准了第三代移动通信系统的无线接口技术规范建议(IMT-RSCP)，此规范建议了5种技术标准。其中，有两种是TDMA技术:SC-TDMA(美国的UMC-136)和MC-TDMA(欧洲的EP-DECT)；另外3种是CDMA技术:MC-CDMA(即cdma2000),DS-CDMA(即WCDMA)和CDMATDD(包括TD-SCDMA和UTRA TDD)。</p>
+<h2 id="4G"><a href="#4G" class="headerlink" title="4G"></a>4G</h2><p>3GPP于2005年3月正式启动了空口技术的长期演进(Long Term Evolution，LTE)项目,并于2008年12月发布了LTE第一个商用版本R8系列规范，截至2014年年底,共发布了R9、R10、R11和R124个增强型规范,并将持续进行后续版本演进。虽然业界通常将LTE称为第四代移动通信标准，但严格意义上，LTE的R10以后的版本(也称为LTE-Advanced )才是真正满足ITU对第四代移动通信标准性能指标要求的规范。LTE 系统的目标是以OFDM和MIMO为主要技术基础，开发出满足更低传输时延、提供更高用户传输速率、增加容量和覆盖、减少运营费用、优化网络架构、采用更大载波带宽，并优化分组数据域传输的移动通信标准。LTE&#x2F;LTE-Advanced标准分为FDD和 TDD两种模式，其中TDD模式作为TD-SCDMA系统的后续演进技术与标准，其核心技术由中国厂商所主导，也被称为TD-LTE&#x2F;LTE-Advanced。</p>
+<h2 id="5G"><a href="#5G" class="headerlink" title="5G"></a>5G</h2><p>5G（5th-Generation），即第五代移动电话行动通信标准，也称第五代移动通信技术，是4G之后的延伸。5G具有高速率、宽带宽、高可靠、低时延等特征。随着无线移动通信系统带宽和能力的增加，面向个人和行业的移动应用快速发展，移动通信相关产业生态将逐渐发生变化，5G不仅仅是更高速率、更大带宽、更强能力的空中接口技术，而且是面向用户体验和业务应用的智能网络。与前几代产品相比，5G旨在提供更高的数据传输速率、更低的延迟和更高的可靠性，从而实现新的用例，并改变广泛的行业。5G 网络可以支持更多的设备，还可以处理更多的数据密集型应用，例如虚拟现实和增强现实、自动驾驶汽车和 IoT（物联网）。</p>
+<h2 id="6G"><a href="#6G" class="headerlink" title="6G"></a>6G</h2><p>在现阶段，国际电信联盟无线通信部门（ITU-R）的主要目标是就IMT-2030（6G）的愿景达成全球共识，包括识别潜在用户应用趋势和新兴技术趋势、定义增强型&#x2F;新型应用场景和相关能力、理解频谱方面的新需求等。ITU-R于2022年6月商定了6G的总体时间表，主要分为三个阶段1：</p>
+<p>阶段1——2023年6月，在世界无线电通信大会（WRC-23）召开之前，完成愿景定义；<br>阶段2——2026年确定需求和评估方法；<br>阶段3——2030年输出规范。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/github.io/tags/%E6%97%A0%E7%BA%BF%E9%80%9A%E8%AE%AF/" class="print-no-link">#无线通讯</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>蜂窝网络标准和类型变迁</div>
+      <div>https://wangyuxue-ouc.github.io/github.io/2025/07/15/4.3 蜂窝网络标准和类型变迁/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Wang _Fitz</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年7月15日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/github.io/2025/06/10/1.5%20RISC-V%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E8%84%89%E7%BB%9C/" title="RISC-V处理器的脉络">
+                        <span class="hidden-mobile">RISC-V处理器的脉络</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/github.io/js/events.js" ></script>
+<script  src="/github.io/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/github.io/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/github.io/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/github.io/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

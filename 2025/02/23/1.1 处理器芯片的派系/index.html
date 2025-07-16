@@ -1,0 +1,693 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/github.io/img/fluid.png">
+  <link rel="icon" href="/github.io/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Wang _Fitz">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1. 芯片的结构当下芯片结构简单划分就三种概念结构：冯.诺依曼结构，哈弗结构和改进哈弗结构。  冯.诺依曼结构   客户把原始的需求文档（包含输入数据和程序）交给负责记录的人后，根据定义的沟通方式，和负责实际计算的人一起反复来回的传递文档（拿程序指令，拿数据，返结果），最后把计算结果通过记录的人反馈给客户。  哈弗结构  将程序指令和数据分开存储，采用了独立的一组程序总线和一组数据总线。这就相当于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="处理器芯片的派系">
+<meta property="og:url" content="https://wangyuxue-ouc.github.io/github.io/2025/02/23/1.1%20%E5%A4%84%E7%90%86%E5%99%A8%E8%8A%AF%E7%89%87%E7%9A%84%E6%B4%BE%E7%B3%BB/index.html">
+<meta property="og:site_name" content="耕海纪">
+<meta property="og:description" content="1. 芯片的结构当下芯片结构简单划分就三种概念结构：冯.诺依曼结构，哈弗结构和改进哈弗结构。  冯.诺依曼结构   客户把原始的需求文档（包含输入数据和程序）交给负责记录的人后，根据定义的沟通方式，和负责实际计算的人一起反复来回的传递文档（拿程序指令，拿数据，返结果），最后把计算结果通过记录的人反馈给客户。  哈弗结构  将程序指令和数据分开存储，采用了独立的一组程序总线和一组数据总线。这就相当于">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-02-23T14:35:27.000Z">
+<meta property="article:modified_time" content="2025-06-02T01:29:16.391Z">
+<meta property="article:author" content="Wang _Fitz">
+<meta property="article:tag" content="芯片架构">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>处理器芯片的派系 - 耕海纪</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/github.io/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/github.io/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/github.io/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wangyuxue-ouc.github.io","root":"/github.io/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/github.io/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/github.io/js/utils.js" ></script>
+  <script  src="/github.io/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/github.io/">
+      <strong>耕海纪</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github.io/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github.io/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github.io/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github.io/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/github.io/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="处理器芯片的派系"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-02-23 22:35" pubdate>
+          2025年2月23日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          11 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">处理器芯片的派系</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="1-芯片的结构"><a href="#1-芯片的结构" class="headerlink" title="1. 芯片的结构"></a>1. 芯片的结构</h2><p>当下芯片结构简单划分就三种概念结构：冯.诺依曼结构，哈弗结构和改进哈弗结构。</p>
+<ul>
+<li><h4 id="冯-诺依曼结构"><a href="#冯-诺依曼结构" class="headerlink" title="冯.诺依曼结构"></a>冯.诺依曼结构</h4></li>
+</ul>
+<p> 客户把原始的需求文档（包含输入数据和程序）交给负责记录的人后，根据定义的沟通方式，和负责实际计算的人一起反复来回的传递文档（拿程序指令，拿数据，返结果），最后把计算结果通过记录的人反馈给客户。</p>
+<ul>
+<li><h4 id="哈弗结构"><a href="#哈弗结构" class="headerlink" title="哈弗结构"></a>哈弗结构</h4></li>
+</ul>
+<p>将程序指令和数据分开存储，采用了独立的一组程序总线和一组数据总线。这就相当于原来记录员分了个工，一个就负责记录传递计算方法（程序），一个人就负责记录传递计算内容（数据）。两个人和拨算盘的人点对点沟通，但相互之间老死不往来。</p>
+<ul>
+<li><h4 id="改进哈弗结构"><a href="#改进哈弗结构" class="headerlink" title="改进哈弗结构"></a>改进哈弗结构</h4></li>
+</ul>
+<p>保留了两个独立并行的存储器，只有一组总线供程序存储器和数据存储器分时共用。这就相当于记录员还是为了效率做了分工，但沟通方式升级，把客户和拨算盘的人也加入进来做了个四方沟通会（分时公用）。</p>
+<hr>
+<h2 id="2-芯片的派系"><a href="#2-芯片的派系" class="headerlink" title="2. 芯片的派系"></a>2. 芯片的派系</h2><h4 id="（1）通用芯片"><a href="#（1）通用芯片" class="headerlink" title="（1）通用芯片"></a>（1）通用芯片</h4><p>通用芯片，这意味着其必须具备处理各式各样千奇百怪的指令要求，并且经常同时存在多个外部设备的请求，它必须拥有随时中止目前的运算转而进行其他运算，完成后再从中断点继续当前运算的能力。</p>
+<ul>
+<li><h5 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h5></li>
+</ul>
+<p>CPU虽然有多核，但基本不超过两位数，每个核都有足够大的缓存和足够多的数字和逻辑运算单元，并有更复杂的逻辑判断硬件，就像银行里常备的3-4个柜台的柜员，擅长处理客户很复杂的业务。</p>
+<ul>
+<li><h5 id="MPU"><a href="#MPU" class="headerlink" title="MPU"></a>MPU</h5></li>
+</ul>
+<p>MPU和CPU可以简单理解为一个概念，只是理解范畴上的区别。</p>
+<ul>
+<li><h5 id="GPU"><a href="#GPU" class="headerlink" title="GPU"></a>GPU</h5></li>
+</ul>
+<p>GPU的核数远超CPU，每个核拥有的缓存大小相对小，数字逻辑运算单元也少而简单，更像是500多个电话客服柜员，处理一些相对简单但数量众多的客户业务。</p>
+<ul>
+<li><h5 id="DSP"><a href="#DSP" class="headerlink" title="DSP"></a>DSP</h5></li>
+</ul>
+<p>DSP（数字信号处理芯片）是一类特殊的CPU，采用哈佛结构，且存在专用的硬件算法电路和专门的寻址模式。它具有通用芯片设计的灵活性，但在实时运算过程中很少变化，因此特化了业务流程的性能（记录和计算过程）。</p>
+<h4 id="（2）定制芯片"><a href="#（2）定制芯片" class="headerlink" title="（2）定制芯片"></a>（2）定制芯片</h4><p>相比通用芯片，定制芯片是没有“人性”的，就是一个ATM机，其给客户定义了清晰的操作流程，省去了中断等大量灵活性设计。FPGA和ASIC两者核心的区别就是固化程度，区别最大的维度还是成本和功耗。</p>
+<ul>
+<li><h5 id="FPGA"><a href="#FPGA" class="headerlink" title="FPGA"></a>FPGA</h5></li>
+</ul>
+<p>FPGA最早是从专用集成电路发展而来的半定制化的可编程电路，是高端的CPLD (Complex Programmable Logic Device复杂可编程逻辑器件)。FPGA是一堆逻辑门，通过硬件描述语言HDL把它转成电路连接，从最基本的逻辑门层面上连接成电路。</p>
+<ul>
+<li><h5 id="ASIC"><a href="#ASIC" class="headerlink" title="ASIC"></a>ASIC</h5></li>
+</ul>
+<p>ASIC就是专用IC，ASIC原本就是专门为某一项功能开发的专用集成芯片。后来ASIC发展了一些，称为半定制专用集成电路，其代表了在需求一定的情况下，对性价比的极致追求。</p>
+<h4 id="（3）芯片之上的集成"><a href="#（3）芯片之上的集成" class="headerlink" title="（3）芯片之上的集成"></a>（3）芯片之上的集成</h4><ul>
+<li><h5 id="MCU"><a href="#MCU" class="headerlink" title="MCU"></a>MCU</h5></li>
+</ul>
+<p>MCU本身不是一种芯片类型而是一种集成方式，单片机是MCU的通俗说法，经典的51系列就是一堆IO口，后来慢慢的把常用的PWM, AD之类的功能加入了单片机之中。其构成等价于一个带了更多外设CPU，但侧重点是讨论其外设的部分。</p>
+<ul>
+<li><h5 id="ECU"><a href="#ECU" class="headerlink" title="ECU"></a>ECU</h5></li>
+</ul>
+<p>在PWM,AD等之上继续发展其外设也就形成了汽车行业熟悉的ECU（即电子控制单元），同时泛指汽车上所有电子控制系统，可以是转向ECU，空调ECU等。ECU一般由MCU，扩展内存，扩展输入和输出（CAN&#x2F;LIN，AD,PWM等）。</p>
+<ul>
+<li><h5 id="SOC"><a href="#SOC" class="headerlink" title="SOC"></a>SOC</h5></li>
+</ul>
+<p>SOC芯片是ECU的概念进一步升级，更为流行的说法是域控制器，其无外乎就是把MCU变成了SoC（片上系统），同时集成了更多的外围设备而已。在SoC中各种组件（IP核）采用类似搭积木的方法组合在一起，做成不同的SoC芯片。</p>
+<hr>
+<h2 id="3-软硬件的匹配设计"><a href="#3-软硬件的匹配设计" class="headerlink" title="3. 软硬件的匹配设计"></a>3. 软硬件的匹配设计</h2><p>算法的性能与硬件设计往往脱离不开，软硬件一起考虑往往才能充分利用好系统性能。不同的芯片，不同的算法和需求，往往有最优的组合方式。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/github.io/tags/%E8%8A%AF%E7%89%87%E6%9E%B6%E6%9E%84/" class="print-no-link">#芯片架构</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>处理器芯片的派系</div>
+      <div>https://wangyuxue-ouc.github.io/github.io/2025/02/23/1.1 处理器芯片的派系/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Wang _Fitz</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年2月23日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/github.io/2025/03/15/1.2%20%E4%B8%BB%E6%B5%81%E8%8A%AF%E7%89%87%E6%9E%B6%E6%9E%84/" title="主流芯片架构">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">主流芯片架构</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/github.io/2025/02/13/2.2%20%E6%A0%91%E8%8E%93%E6%B4%BE%E7%89%88%E6%9C%AC%E5%8F%98%E8%BF%81%E4%B8%8E%E5%B7%AE%E5%BC%82/" title="树莓派版本变迁与差异">
+                        <span class="hidden-mobile">树莓派版本变迁与差异</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/github.io/js/events.js" ></script>
+<script  src="/github.io/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/github.io/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/github.io/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/github.io/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
