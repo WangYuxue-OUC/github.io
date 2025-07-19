@@ -2,7 +2,7 @@ This is a private blog where I want to do something cool and unusual about mysel
 
 /
 ├── 随笔/
-    ├── 致谢青春，再见海大/20230401
+    ├── 耕海纪/20230401
     
 ├── 芯片架构/
 	├── 处理器芯片的派系/20250223
@@ -25,6 +25,6 @@ This is a private blog where I want to do something cool and unusual about mysel
 	├── Wi-Fi标准和类型变迁/20250211
 	├── 蓝牙标准和类型变迁/20250625
 	├── 蜂窝网络标准和类型变迁/20250715
-	
+
 ├── ……/
 └── end/
